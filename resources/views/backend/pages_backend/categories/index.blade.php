@@ -18,7 +18,7 @@
                     <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
 
                         <div>
-                            <a href="" class="btn bg-primary text-light"><i
+                            <a href="{{ url('admin/categories/create')}}" class="btn bg-primary text-light"><i
                                     class="bx bx-plus me-1"></i> Add Service Category</a>
                         </div>
 

@@ -37,7 +37,7 @@
                                         <!-- <p class="card-title-desc">Add Category</p> -->
                                     </div>
                                     <div class="card-body">
-                                    <form  action="{{ route('service_categories.store') }}"  method="POST">
+                                    <form  action=""  method="POST">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-12">

@@ -46,12 +46,12 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
-                            <a href="/teams/create">
+                            <a href="{{ url('admin/categories/create')}}">
                                 <span data-key="t-chat">Add Category</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/teams">
+                            <a href="{{ url('admin/categories')}}">
                                 <span data-key="t-chat">View Categories</span>
                             </a>
                         </li>
