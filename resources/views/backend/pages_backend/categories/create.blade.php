@@ -37,10 +37,10 @@
                                         <!-- <p class="card-title-desc">Add Category</p> -->
                                     </div>
                                     <div class="card-body">
-                                    <form  action=""  method="POST">
+                                    <form  action="{{ url('admin/categories') }}"  method="POST" ectype="multipart/form-data">
                                             @csrf
                                             <div class="row">
-                                                <div class="col-md-12">
+                                                <div class="col-md-6">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
                                                         <input type="text" class="form-control" id="validationCustom01"  name="service_category_name" placeholder="Ennter Category Name" value="" required>
@@ -49,12 +49,71 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="validationCustom01">Slug</label>
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="" required>
+                                                        <div class="valid-feedback">
+                                                            Validation
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" >Description</label>
-                                                        <textarea class="form-control"  name="service_category_description" placeholder="Enter Category Description" rows="3"></textarea>
+                                                        <textarea class="form-control"  name="description" placeholder="Enter Category Description" rows="3"></textarea>
                                                     </div>
                                                 </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="validationCustom01">image</label>
+                                                        <input type="file" class="form-control" id="validationCustom01"  name="image" placeholder="Ennter Category Name" value="" required>
+                                                        <div class="valid-feedback">
+                                                            Validation
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="validationCustom01">status</label><br>
+                                                        <input type="checkbox"   id="validationCustom01"  name="status"  >
+                                                        
+                                                    </div>
+                                                </div>
+                                                <h3>SEO TAGS </H3>
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="validationCustom01">Meta title</label>
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="meta_title" placeholder="Ennter Category Name" value="" required>
+                                                        <div class="valid-feedback">
+                                                            Validation
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" >Meta Keywords</label>
+                                                        <textarea class="form-control"  name="meta_keywords" placeholder="Enter Category Description" rows="3"></textarea>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" >Meta Description</label>
+                                                        <textarea class="form-control"  name="meta_description" placeholder="Enter Category Description" rows="3"></textarea>
+                                                    </div>
+                                                </div>
+
                                                 
                                             </div>
 
