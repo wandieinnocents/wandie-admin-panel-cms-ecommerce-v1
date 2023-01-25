@@ -14,7 +14,7 @@ Dashboard
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                                     <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
                                     @if(session('message'))
-                                    <h2>{{ session('message') }}</h2>
+                                    <h3 class="alert alert-succes">{{ session('message') }}</h3>
                                     @endif
 
                                     <div class="page-title-right">

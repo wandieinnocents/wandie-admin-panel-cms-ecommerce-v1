@@ -26,54 +26,131 @@
                         <span data-key="t-dashboard">Feedback</span>
                     </a>
                 </li>
-                {{-- volunteers --}}
-                <li>
-                    <a href="/volunteers">
+                {{-- sales --}}
+                 <li>
+                    <a href="/feedbacks">
                         <i class="fas fa-comment-alt "></i>
-                        <span data-key="t-dashboard">Volunteers</span>
+                        <span data-key="t-dashboard">Sales</span>
                     </a>
                 </li>
                 
                
+                
+               
           
-                {{-- Team --}}
+                {{-- Categories --}}
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
                         <i class="fas fa-university"></i>
-                        <span data-key="t-apps">Staff</span>
+                        <span data-key="t-apps">Categories</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
                             <a href="/teams/create">
-                                <span data-key="t-chat">Add Staff</span>
+                                <span data-key="t-chat">Add Category</span>
                             </a>
                         </li>
                         <li>
                             <a href="/teams">
-                                <span data-key="t-chat">View Staffs</span>
+                                <span data-key="t-chat">View Categories</span>
                             </a>
                         </li>
                     </ul>
                 </li>
-                {{-- Faq --}}
+
+                 {{-- Products --}}
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
                         <i class="fas fa-university"></i>
-                        <span data-key="t-apps">Faq's</span>
+                        <span data-key="t-apps">Products</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="/teams/create">
+                                <span data-key="t-chat">Add Product</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/teams">
+                                <span data-key="t-chat">View Products</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                {{-- Brands --}}
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i class="fas fa-university"></i>
+                        <span data-key="t-apps">Brands</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
                             <a href="/faqs/create">
-                                <span data-key="t-calendar">Add Faq</span>
+                                <span data-key="t-calendar">Add Brand</span>
                             </a>
                         </li>
                     <li>
                             <a href="/faqs">
-                                <span data-key="t-calendar">View Faq's</span>
+                                <span data-key="t-calendar">View Brands</span>
                             </a>
                         </li>
                     </ul>
                 </li>
+
+
+                {{-- Home slider --}}
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i class="fas fa-university"></i>
+                        <span data-key="t-apps">Home Sliders</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="/faqs/create">
+                                <span data-key="t-calendar">Add Slider</span>
+                            </a>
+                        </li>
+                    <li>
+                            <a href="/faqs">
+                                <span data-key="t-calendar">View Sliders</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                {{-- Users --}}
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i class="fas fa-university"></i>
+                        <span data-key="t-apps">Users</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="/faqs/create">
+                                <span data-key="t-calendar">Add User</span>
+                            </a>
+                        </li>
+                    <li>
+                            <a href="/faqs">
+                                <span data-key="t-calendar">View Users</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                {{-- site settings --}}
+                 <li>
+                    <a href="/feedbacks">
+                        <i class="fas fa-comment-alt "></i>
+                        <span data-key="t-dashboard">Site Settings</span>
+                    </a>
+                </li>
+
+
+
                 <hr>
                
             </ul>
