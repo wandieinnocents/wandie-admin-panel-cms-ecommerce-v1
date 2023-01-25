@@ -31,12 +31,14 @@ class LoginController extends Controller
      */
     // protected $redirectTo = RouteServiceProvider::HOME;
 
+
+    // method to use if user is authenticated
     protected function authenticated(){
         if(Auth::user()->role_as == '1'){
             return redirect('/admin/dashboard')->with('status','Welcome to dashboard');
         }
         else{
-            return redirect('/home')->with('status','Logged in successfuly to normal user')
+            return redirect('/home')->with('status','Logged in successfuly to normal user');
         }
 
 
