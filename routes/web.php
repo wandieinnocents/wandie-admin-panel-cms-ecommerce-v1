@@ -20,8 +20,8 @@ Route::get('/', function () {
 
 // ADMIN
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function() {
-Route::get('dashboard',[App\Http\Controllers\Admin\DashboardController::class, 'index'] );
-
+    // admin dashboard
+    Route::get('dashboard',[App\Http\Controllers\Admin\DashboardController::class, 'index'] );
 
 });
 
@@ -35,4 +35,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Logout
+Route::get('/logout', function(){
+    Auth::logout();
+    return Redirect::to('login');
+ });
+
 

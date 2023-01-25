@@ -76,16 +76,18 @@
                                 <img class="rounded-circle header-profile-user" src="{{ asset('assets/backend_assets/assets/images/users/user.png') }}"
                                     alt="Header Avatar">
                                 <span class="d-none d-xl-inline-block ms-1 fw-medium">
-                                    wandie user
+                                    {{ Auth::user()->name }}
                                 </span>
                                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
-                                <a class="dropdown-item" href=""><i class="mdi mdi-face-profile font-size-16 align-middle me-1"></i> Users</a>
+                                <a class="dropdown-item" href=""><i class="mdi mdi-face-profile font-size-16 align-middle me-1"></i> 
+                                 {{ Auth::user()->name }}
+                                 </a>
                                 
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href=""><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
+                                <a class="dropdown-item" href="{{ route('logout')}}"><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
                             </div>
                         </div>
 
