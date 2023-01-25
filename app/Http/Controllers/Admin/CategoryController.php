@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 // requests
 use App\Http\Requests\CategoryFormRequest;
 use Illuminate\Support\Str;
-
+use App\Models\Category;
 class CategoryController extends Controller
 {
     public function index(){
@@ -28,16 +28,30 @@ class CategoryController extends Controller
         $category->name = $validatedData['name'];
         $category->slug = Str::slug($validatedData['slug']);
         $category->description = $validatedData['description'];
+        
+        // category image
+        if($request->hasFile('image')){
 
+            $file = $request->file('image');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
 
-        $category->image = $validatedData['image'];
+            $file->move('uploads/category/', $filename);
+            $category->image = $filename;
 
+        }
 
         $category->meta_title = $validatedData['meta_title'];
         $category->meta_keywords = $validatedData['meta_keywords'];
         $category->meta_description = $validatedData['meta_description'];
         $category->status = $request->status == true ? '1':'0';
 
+        // save
+        // dd($category);
+
+        $category->save();
+        // redirect
+        return redirect('admin/categories')->with('message','Category added successfuly');
 
 
 

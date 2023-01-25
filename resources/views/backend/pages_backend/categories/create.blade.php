@@ -13,7 +13,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0 font-size-18">Service Categories</h4>
+                                    <h4 class="mb-sm-0 font-size-18">Product Categories</h4>
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
@@ -33,30 +33,31 @@
                             <div class="col-xl-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Add Service  Category</h4>
+                                        <h4 class="card-title">Add Product  Category</h4>
                                         <!-- <p class="card-title-desc">Add Category</p> -->
                                     </div>
                                     <div class="card-body">
-                                    <form  action="{{ url('admin/categories') }}"  method="POST" ectype="multipart/form-data">
+                                    <form  action="{{ url('admin/categories') }}"  method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="service_category_name" placeholder="Ennter Category Name" value="" required>
-                                                        <div class="valid-feedback">
-                                                            Validation
-                                                        </div>
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Category Name" value="">
+                                                         @error('name') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                          @enderror
+                                                        
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Slug</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="" required>
-                                                        <div class="valid-feedback">
-                                                            Validation
-                                                        </div>
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="" >
+                                                         @error('slug') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                          @enderror
                                                     </div>
                                                 </div>
 
@@ -67,16 +68,19 @@
                                                     <div class="mb-3">
                                                         <label class="form-label" >Description</label>
                                                         <textarea class="form-control"  name="description" placeholder="Enter Category Description" rows="3"></textarea>
+                                                         @error('description') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                          @enderror
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">image</label>
-                                                        <input type="file" class="form-control" id="validationCustom01"  name="image" placeholder="Ennter Category Name" value="" required>
-                                                        <div class="valid-feedback">
-                                                            Validation
-                                                        </div>
+                                                        <input type="file" class="form-control" id="validationCustom01"  name="image"  value="" >
+                                                       @error('image') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                       @enderror
                                                     </div>
                                                 </div>
 
@@ -84,6 +88,9 @@
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">status</label><br>
                                                         <input type="checkbox"   id="validationCustom01"  name="status"  >
+                                                         @error('status') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                          @enderror
                                                         
                                                     </div>
                                                 </div>
@@ -91,10 +98,10 @@
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Meta title</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="meta_title" placeholder="Ennter Category Name" value="" required>
-                                                        <div class="valid-feedback">
-                                                            Validation
-                                                        </div>
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="meta_title" placeholder="Ennter Category Name" value="" >
+                                                         @error('meta_title') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                          @enderror
                                                     </div>
                                                 </div>
 
@@ -103,6 +110,9 @@
                                                     <div class="mb-3">
                                                         <label class="form-label" >Meta Keywords</label>
                                                         <textarea class="form-control"  name="meta_keywords" placeholder="Enter Category Description" rows="3"></textarea>
+                                                         @error('meta_keywords') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                          @enderror
                                                     </div>
                                                 </div>
 
@@ -111,6 +121,9 @@
                                                     <div class="mb-3">
                                                         <label class="form-label" >Meta Description</label>
                                                         <textarea class="form-control"  name="meta_description" placeholder="Enter Category Description" rows="3"></textarea>
+                                                         @error('meta_description') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                          @enderror
                                                     </div>
                                                 </div>
 
@@ -118,7 +131,7 @@
                                             </div>
 
                                             <!-- Editor -->
-                                            <button class="btn btn-primary" type="submit">Add Service Category</button>
+                                            <button class="btn btn-primary" type="submit">Add Product Category</button>
                                         </form>
                                     </div>
                                 </div>

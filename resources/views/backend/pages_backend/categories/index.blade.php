@@ -8,6 +8,12 @@
     <div class="page-content">
         <div class="container-fluid">
             <div class="row align-items-center">
+
+             @if(session('message'))
+
+             <div class="alert alert-success" > {{ session('message')}} </div>
+
+             @endif
                 <div class="col-md-6">
                     <div class="mb-3">
                         <h5 class="card-title">Service Category <span class="text-muted fw-normal ms-2">(counter)</span></h5>
