@@ -50,7 +50,7 @@
                     </thead>
                     <tbody>
 
-                        {{-- @foreach ($service_categories as $service_category) --}}
+                        @foreach ($categories as $category)
                             <tr>
                                 <th scope="row">
                                     <div class="form-check font-size-16">
@@ -58,26 +58,29 @@
                                         <label class="form-check-label" for="contacusercheck11"></label>
                                     </div>
                                 </th>
-                                <td>1</td>
+                                <td>{{ $category->id }}</td>
                                 <td>
                                     <a href="#"
-                                        class="text-body">name</a>
+                                        class="text-body">{{ $category->name }}</a>
                                 </td>
+                                <td>{{ $category->status == '1' ? 'Hidden':'Visible' }}</td>
 
-                                <td>Description</td>
-
+                                <td>{{ $category->description }}</td>
+                                {{-- actions  --}}
                                 <td colspan="6">
                                     <div class="row">
+                                    {{-- view --}}
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-success" data-bs-toggle="modal"
                                                 data-bs-target="#viewServiceCategoryDetails"
                                                 data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
                                         </div>
+                                        {{-- edit --}}
 
                                         <div class="col-md-4">
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            <a href="{{ url('admin/categories/'.$category->id.'/edit') }}"><button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                                 data-bs-target="#editServiceCategory" data-bs-whatever="@getbootstrap"><i
-                                                    class="fas fa-pencil-alt "></i></button>
+                                                    class="fas fa-pencil-alt "></i></button></a>
 
                                         </div>
 
@@ -101,11 +104,16 @@
 
 
                          
-                        {{-- @endforeach --}}
+                        @endforeach
 
 
                     </tbody>
                 </table>
+
+                {{-- pagination --}}
+                <div>{{ $categories->links() }}</div>
+
+
                 <!-- end table -->
             </div>
             <!-- end table responsive -->

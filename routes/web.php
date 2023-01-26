@@ -23,12 +23,15 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function() {
 
     // admin dashboard
     Route::get('dashboard',[App\Http\Controllers\Admin\DashboardController::class, 'index'] );
-    // view category
-    Route::get('categories',[App\Http\Controllers\Admin\CategoryController::class, 'index'] );
-    // create categories
-    Route::get('categories/create',[App\Http\Controllers\Admin\CategoryController::class, 'create'] );
-    // create categories
-    Route::post('categories',[App\Http\Controllers\Admin\CategoryController::class, 'store'] );
+
+    // CATEGORIES 
+    Route::controller(App\Http\Controllers\Admin\CategoryController::class)->group(function () {
+        Route::get('/categories', 'index');
+        Route::get('/categories/create', 'create');
+        Route::post('/categories', 'store');
+        Route::get('/categories/create', 'create');
+        Route::get('/categories/{categories}/edit', 'create');
+    });
 
 
 });
