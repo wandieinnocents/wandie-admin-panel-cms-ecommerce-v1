@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 // requests
 use App\Http\Requests\CategoryFormRequest;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use App\Models\Category;
 class CategoryController extends Controller
@@ -68,7 +69,7 @@ class CategoryController extends Controller
     // update
     public function update(CategoryFormRequest $request,$category){
         $validatedData = $request->validated();
-        
+
         // find category by id
         $category = Category::findOrFail($category);
         $category->name = $validatedData['name'];
@@ -76,7 +77,14 @@ class CategoryController extends Controller
         $category->description = $validatedData['description'];
         
         // category image
+       
+
         if($request->hasFile('image')){
+            // delete oldpath on update
+            $path = 'uploads/category/'.$category->image;
+            if(File::exists($path)){
+                File::delete($path);
+            }
 
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
@@ -95,11 +103,17 @@ class CategoryController extends Controller
         // save
         // dd($category);
 
-        $category->save();
+        $category->update();
         // redirect
-        return redirect('admin/categories')->with('message','Category added successfuly');
+        return redirect('admin/categories')->with('message','Category Updated successfuly');
 
 
+    }
+
+    // delete
+    public function delete()
+    {
+        
     }
 
 
