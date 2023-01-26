@@ -111,9 +111,9 @@ class CategoryController extends Controller
     }
 
     // delete
-    public function delete()
+    public function delete(Category $category)
     {
-        
+        dd("delete");
     }
 
 

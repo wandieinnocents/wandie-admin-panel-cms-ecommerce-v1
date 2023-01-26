@@ -32,6 +32,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function() {
         Route::get('/categories/create', 'create');
         Route::get('/categories/{category}/edit', 'edit');
         Route::put('/categories/{category}', 'update');
+        Route::post('/categories/{category}', 'delete');
 
 
     });
