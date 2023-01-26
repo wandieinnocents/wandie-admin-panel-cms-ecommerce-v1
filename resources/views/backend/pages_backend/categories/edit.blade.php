@@ -37,8 +37,9 @@
                                         <!-- <p class="card-title-desc">Add Category</p> -->
                                     </div>
                                     <div class="card-body">
-                                    <form  action="{{ url('admin/categories') }}"  method="POST" enctype="multipart/form-data">
+                                    <form  action="{{ url('admin/categories/'.$category->id) }}"  method="POST" enctype="multipart/form-data">
                                             @csrf
+                                            @method('PUT')
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="mb-3">
@@ -132,7 +133,7 @@
                                             </div>
 
                                             <!-- Editor -->
-                                            <button class="btn btn-primary" type="submit">Add Product Category</button>
+                                            <button class="btn btn-primary" type="submit">Update Product Category</button>
                                         </form>
                                     </div>
                                 </div>

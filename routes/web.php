@@ -31,10 +31,13 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function() {
         Route::post('/categories', 'store');
         Route::get('/categories/create', 'create');
         Route::get('/categories/{category}/edit', 'edit');
+        Route::get('/categories/{category}', 'edit');
+
+
     });
 
 
-    
+
 
 
 });
