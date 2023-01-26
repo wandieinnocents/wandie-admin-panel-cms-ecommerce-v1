@@ -60,7 +60,8 @@ class CategoryController extends Controller
     // edit 
     public function edit(Category $category){
 
-        return $category;
+        // return $category;
+        return view('backend.pages_backend.categories.edit',compact('category'));
 
     }
 

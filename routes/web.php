@@ -18,13 +18,13 @@ Route::get('/', function () {
 });
 
 
-// ADMIN
+// ADMIN GROUP ROUTE
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function() {
 
     // admin dashboard
     Route::get('dashboard',[App\Http\Controllers\Admin\DashboardController::class, 'index'] );
 
-    // CATEGORIES 
+    // CATEGORIES  GROUP ROUTE
     Route::controller(App\Http\Controllers\Admin\CategoryController::class)->group(function () {
         Route::get('/categories', 'index');
         Route::get('/categories/create', 'create');
@@ -32,6 +32,9 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function() {
         Route::get('/categories/create', 'create');
         Route::get('/categories/{category}/edit', 'edit');
     });
+
+
+    
 
 
 });
