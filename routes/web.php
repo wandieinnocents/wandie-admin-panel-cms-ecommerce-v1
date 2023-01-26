@@ -30,7 +30,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function() {
         Route::get('/categories/create', 'create');
         Route::post('/categories', 'store');
         Route::get('/categories/create', 'create');
-        Route::get('/categories/{categories}/edit', 'create');
+        Route::get('/categories/{category}/edit', 'edit');
     });
 
 

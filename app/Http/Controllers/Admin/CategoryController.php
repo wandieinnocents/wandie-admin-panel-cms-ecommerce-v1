@@ -55,7 +55,16 @@ class CategoryController extends Controller
 
 
 
-
-        return view('backend.pages_backend.categories.create');
     }
+
+    // edit 
+    public function edit(Category $category){
+
+        return $category;
+
+    }
+
+
+
+
 }
